@@ -62,6 +62,18 @@ bhaskar joshi
 hello everyone my name is bhaskar joshi and i welcome you all 
 
 </h1>
+ <p>Download index of focp
+<p>
+ <button onclick="downloadPDFe()">Download PDF(front page)</button>
+
+<script>
+function downloadPDFe() {
+  const link = document.createElement('a');
+  link.href = "SURAJMAL UNIVERSITY.pdf";
+  link.download = "your_pdf_file.pdf";
+  link.click();
+}
+</script>
 <p>Download index of focp
 <p>
  <button onclick="downloadPDF()">Download PDF(index)</button>
@@ -82,8 +94,8 @@ function downloadPDF() {
 <script>
 function downloadPDFS() {
   const link = document.createElement('a');
-  link.href = "focpassingment.pdf";
-  link.download = "your_pdfs_file.pdf";
+  link.href = "assing2.pdf";
+  link.download = "your_assingment_newfile.pdf";
   link.click();
 }
 </script>
