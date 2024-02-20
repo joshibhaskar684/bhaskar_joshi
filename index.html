@@ -57,15 +57,14 @@ bhaskar joshi
 <li><a href="">About</a></li>
 <li><a href="file:///C:/Users/joshi/OneDrive/Desktop/try%20out/first.html" target="_blank"> First sample</a></li>
 </ul>
-<img src="photo.jpg" height="150cm" width="150cm" alt="My Image" style="filter: contrast(0) saturate(1) brightness(2) saturate(1); shape-rendering: ;padding: 5px; ;">
+<img src="photo.jpg" height="150cm" width="150cm" alt="My Image" >
 <h1 style="font-size:66px; font-style:italic;">
 hello everyone my name is bhaskar joshi and i welcome you all 
 
 </h1>
-<h2>Download index of focp
-</h2>
- <a href="INDEX.pdf" download="INDEX.pdf">Download PDF</a>
- <button onclick="downloadPDF()">Download PDF</button>
+<p>Download index of focp
+<p>
+ <button onclick="downloadPDF()">Download PDF(index)</button>
 
 <script>
 function downloadPDF() {
@@ -76,22 +75,34 @@ function downloadPDF() {
 }
 </script>
 
+<p>download focp assingment</p>
+ 
+  <button onclick="downloadPDF()">Download PDF(assingment)</button>
+
+<script>
+function downloadPDF() {
+  const link = document.createElement('a');
+  link.href = ".pdf";
+  link.download = "your_pdfs_file.pdf";
+  link.click();
+}
+</script>
 
 
 
 
 
+<p>upload file </p>
+ <p> this function is not working so do not try it</p>
 
-
-
-<!DOCTYPE html>
+<!--/*<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PDF Upload and Download</title>
 </head>
-<body>
+<body>*/-->
 
 <!-- Upload Form -->
 <form id="uploadForm" action="#" enctype="multipart/form-data">
