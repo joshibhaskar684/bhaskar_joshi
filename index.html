@@ -78,6 +78,71 @@ function downloadPDF() {
 
 
 
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Upload and Download</title>
+</head>
+<body>
+
+<!-- Upload Form -->
+<form id="uploadForm" action="#" enctype="multipart/form-data">
+    <input type="file" id="pdfFile" name="pdfFile" accept="INDEX.pdf">
+    <button type="submit">Upload PDF</button>
+</form>
+
+<!-- Download Button -->
+<a id="downloadLink" download="uploaded.pdf">
+    <button id="downloadButton" style="display:none;">Download PDF</button>
+</a>
+
+<script>
+    // Function to handle file upload
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var fileInput = document.getElementById('pdfFile');
+        var file = fileInput.files[0];
+        if (file) {
+            var formData = new FormData();
+            formData.append('pdfFile', file);
+            
+            // Simulating upload process (replace with actual upload code)
+            setTimeout(function() {
+                // Show download button after upload (replace with actual logic)
+                document.getElementById('downloadButton').style.display = 'block';
+                document.getElementById('downloadLink').href = URL.createObjectURL(file);
+            }, 2000); // 2 seconds simulated delay
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
 <h3>My Project Work</h3>
 <p style="background-color:black; font-size:40; color:white;">a designer</p>
 
