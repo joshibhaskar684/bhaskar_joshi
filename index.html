@@ -58,7 +58,7 @@ bhaskar joshi
 <li><a href="file:///C:/Users/joshi/OneDrive/Desktop/try%20out/first.html" target="_blank"> First sample</a></li>
 </ul>
 <img src="photo.jpg" height="150cm" width="150cm" alt="My Image" >
-<h1 style="font-size:66px; font-style:italic;">
+<h1 style="font-size:36px; font-style:italic;">
 hello everyone my name is bhaskar joshi and i welcome you all 
 
 </h1>
@@ -77,12 +77,12 @@ function downloadPDF() {
 
 <p>download focp assingment</p>
  
-  <button onclick="downloadPDF()">Download PDF(assingment)</button>
+  <button onclick="downloadPDFS()">Download PDF(assingment)</button>
 
 <script>
-function downloadPDF() {
+function downloadPDFS() {
   const link = document.createElement('a');
-  link.href = ".pdf";
+  link.href = "focpassingment.pdf";
   link.download = "your_pdfs_file.pdf";
   link.click();
 }
@@ -91,7 +91,7 @@ function downloadPDF() {
 
 
 
-
+<!--
 <p>upload file </p>
  <p> this function is not working so do not try it</p>
 
@@ -105,13 +105,13 @@ function downloadPDF() {
 <body>*/-->
 
 <!-- Upload Form -->
-<form id="uploadForm" action="#" enctype="multipart/form-data">
+<!--<form id="uploadForm" action="#" enctype="multipart/form-data">
     <input type="file" id="pdfFile" name="pdfFile" accept="INDEX.pdf">
     <button type="submit">Upload PDF</button>
 </form>
 
 <!-- Download Button -->
-<a id="downloadLink" download="uploaded.pdf">
+<!--<a id="downloadLink" download="uploaded.pdf">
     <button id="downloadButton" style="display:none;">Download PDF</button>
 </a>
 
@@ -133,7 +133,7 @@ function downloadPDF() {
             }, 2000); // 2 seconds simulated delay
         }
     });
-</script>
+</script>-->
 
 
 
