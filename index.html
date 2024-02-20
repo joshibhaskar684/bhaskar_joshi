@@ -42,6 +42,34 @@ color:none;
 text-decoration:underline;
 background-color:pink;
 }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #222;
+  }
+  
+  .ending {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    animation: slideUp 2s ease-out forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 100%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
 </style>
 <title>
 bhaskar joshi
@@ -87,9 +115,9 @@ function downloadPDF() {
 }
 </script>
 
-<p>download focp assingment</p>
+<p><b></b>download focp assingment new</b></p>
  
-  <button onclick="downloadPDFS()">Download PDF(assingment)</button>
+  <button onclick="downloadPDFS()">Download PDF(assingment new)</button>
 
 <script>
 function downloadPDFS() {
@@ -184,7 +212,7 @@ alert("you are going to kncj private official website");}
 <hr>
 <a href="mailto:shivam59joshi@gmail.com">mail me</a>
 <p style="text-align:center;">  </p>
-</body>
+
  <footer>
     <div class="container">
         <div class="logo">
@@ -198,4 +226,63 @@ alert("you are going to kncj private official website");}
     </div>
 </footer>
 
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Ending</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #222;
+  }
+  
+  .ending {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    animation: slideUp 2s ease-out forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 100%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+</style>-->
+</head>
+<body>
+<div class="ending">
+  <p>Thank you for visiting!</p>
+  <p>Come back soon!</p>
+</div>
+
+
+
+
+
+
+
+
+
+ 
+</body>
 </html>
