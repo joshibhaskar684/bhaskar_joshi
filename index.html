@@ -65,6 +65,17 @@ hello everyone my name is bhaskar joshi and i welcome you all
 <h2>Download index of focp
 </h2>
  <a href="INDEX.pdf" download="INDEX.pdf">Download PDF</a>
+ <button onclick="downloadPDF()">Download PDF</button>
+
+<script>
+function downloadPDF() {
+  const link = document.createElement('a');
+  link.href = "INDEX.pdf";
+  link.download = "your_pdf_file.pdf";
+  link.click();
+}
+</script>
+
 
 
 <h3>My Project Work</h3>
