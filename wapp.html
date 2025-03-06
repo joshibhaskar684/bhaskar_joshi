@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Bree+Serif&family=Kaushan+Script&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Pirata+One&family=Protest+Guerrilla&family=Sacramento&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=air" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link  rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="image.png">
+
+    <style>
+    </style>
+</head>
+
+<body onload="fetchWeather('Delhi')" class="roboto-slab">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand tangerine-bold" href="get.html">Wapp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Add nav links here -->
+                </ul>
+
+                <!-- Responsive Form -->
+                <div class="d-flex w-100 justify-content-lg-end justify-content-center">
+                    <form class="d-flex w-100" style="max-width: 400px;" role="search">
+                        <input class="form-control me-2" type="search" id="city-input" placeholder="Enter city name..."
+                            value="Delhi">
+                        <button class="btn btn-outline-primary" type="button" onclick="fetchWeather()">Search</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   
+
+                </ul>
+                <form class="d-flex w-25" role="search">
+                    <input class="form-control me-2"  type="search" id="city-input" placeholder="Enter city name..." value="Delhi">
+                    <button class="btn btn-outline-primary" type="button" onclick="fetchWeather()">Search</button>
+                </form>
+            </div> -->
+        </div>
+    </nav>
+
+
+    <h1 class="my-4 roboto-slab text-center margin-50 m-h-weather-for">Weather for <span id="city">Delhi</span></h1>
+
+    <div class="container container-margin ">
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <!-- Temperature -->
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Temperature</h4>
+                        </div>
+                        <div class="card-body">
+                            <img id="weather-icon" class="weather-icon" src="" alt="Weather Icon">
+                            <h1 class="card-title pricing-card-title" id="current-temperature"></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Min Temperature: <span id="Min-Temperature"></span></li>
+                                <li>Max Temperature: <span id="Max-Temperature"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Humidity Info -->
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Humidity Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <img id="humidity-icon" class="weather-icon" src="" alt="Humidity Icon">
+                            <h1 class="card-title pricing-card-title" id="current-humidity"></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Degree: <span id="wind-degree"></span></li>
+                                <li>Feels Like: <span id="feels-like"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wind Info -->
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Wind Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <img width="96" height="96" class="img-wind" src="https://img.icons8.com/color/96/wind.png"
+                                alt="wind" />
+                            <h1 class="card-title pricing-card-title" id="current-wind"></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Sunrise: <span id="sun-rise"></span></li>
+                                <li>Sunset: <span id="sun-set"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="container margin-50 my-5">
+        <h1 class="text-center margin-50">7 Day Weather Forecast</h1>
+        <div class="row justify-content-center forecast-container">
+            <!-- Forecast data will be dynamically added here -->
+        </div>
+    </div>
+    <div class="last-24-hr" id="weatherdata">
+
+    </div>
+
+    </div>
+
+    <!-- Load Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async
+        defer></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="script3.js"></script> -->
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet.js JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <footer class="bg-primary">
+        <p>&copy; Wapp Inc. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
